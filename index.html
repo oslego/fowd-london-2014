@@ -237,7 +237,7 @@
 
 	<section data-state="blendingbg">
 		<a href="http://razvancaliman.com/cssblending/" target="_blank">
-			<img src="resources/blending-tshirt.png" alt="" />
+			<img src="resources/screenshots/octoshirt.png" alt="" />
 		</a>
 	</section>
 
@@ -351,7 +351,7 @@
 
 	<section data-state="maskingbg">
 		<h2>Clipping with SVG</h2>
-	<pre><code>
+<pre><code>
  .element {
   -webkit-clip-path: url(#clipping);
  }
@@ -363,7 +363,20 @@
      &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;/&gt;
    &lt;/clipPath&gt;
  &lt;/svg&gt;
-	</code></pre>
+
+</code></pre>
+	</section>
+
+	<section data-state="maskingbg">
+		<a href="https://medium.com/editors-picks/ac3bd0d025f5"  target="_blank">
+			<img src="resources/screenshots/medium-mercenary-1.png" alt="" />
+		</a>
+	</section>
+
+	<section data-state="maskingbg">
+		<a href="https://medium.com/editors-picks/ac3bd0d025f5"  target="_blank">
+			<img src="resources/screenshots/medium-mercenary-2.png" alt="" />
+		</a>
 	</section>
 
 	<section data-state="maskingbg">
@@ -383,23 +396,21 @@
 
 	<section data-state="maskingbg">
 		<h2>Masking with SVG</h2>
-	<pre><code>
-	&lt;style&gt;
-	.element {
-	/* use a &lt;mask&gt; element as mask */
-	mask-image: url(#mask);
-	}
-	&lt;/style&gt;
+<pre><code>
+ .element {
+  /* use a &lt;mask&gt; element as mask */
+  mask-image: url(#mask);
+ }
 
-	&lt;svg&gt;
-	&lt;defs&gt;
-	&lt;mask id=&quot;mask&quot;&gt;
-	&lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-	&lt;/mask&gt;
-	&lt;/defs&gt;
-	&lt;/svg&gt;
+</code></pre>
+<pre><code>
+ &lt;svg&gt;
+  &lt;mask id=&quot;mask&quot;&gt;
+   &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+  &lt;/mask&gt;
+ &lt;/svg&gt;
 
-	</code></pre>
+</code></pre>
 	</section>
 
 	<section data-state="blendingbg">
@@ -413,28 +424,34 @@
 	<section data-state="maskingbg">
 
 		<h2>CSS Masking Status</h2>
-		<p><a href="http://www.w3.org/TR/css-masking/">W3C Working Draft</a> - Adobe, Mozilla, Google</p>
+		<p><a href="http://www.w3.org/TR/css-masking-1/">W3C Working Draft</a> - Adobe, Mozilla, Google</p>
 
 		<div class="side-by-side">
 			<div class="side">
-			<img src="resources/browser-logos/webkit.png" alt="Webkit browser logo" class="partial" />
+				<img src="resources/browser-logos/chrome.png" alt="Chrome browser logo" class="partial" />
 			</div>
 			<div class="side">
-			<img src="resources/browser-logos/chrome.png" alt="Chrome browser logo" class="partial" />
+				<img src="resources/browser-logos/opera.png" alt="Chrome browser logo" class="partial" />
 			</div>
 			<div class="side">
-			<img src="resources/browser-logos/firefox.png" alt="Firefox browser logo" class="partial" />
+				<img src="resources/browser-logos/webkit.png" alt="Webkit browser logo" class="partial" />
+			</div>
+			<div class="side">
+				<img src="resources/browser-logos/firefox.png" alt="Firefox browser logo" class="partial" />
 			</div>
 		</div>
 	</section>
 
 	<section data-state="maskingbg">
-		<a href="http://www.html5rocks.com/en/tutorials/masking/adobe/"  target="_blank"><img src="resources/css-masking-html5rocks.png" alt="" /></a>
-		<a href="http://www.html5rocks.com/en/tutorials/masking/adobe/" target="_blank">CSS Masking on html5rocks.com</a>
+		<a href="http://www.html5rocks.com/en/tutorials/masking/adobe/"  target="_blank">
+			<img src="resources/screenshots/html5rocks-masking.png" alt="" />
+		</a>
 	</section>
 
 	<section data-state="maskingbg">
-		// SARA SOUEIDAN on CODROPS
+		<a href="http://tympanus.net/codrops/2013/12/02/techniques-for-creating-textured-text/"  target="_blank">
+			<img src="resources/screenshots/sara-masking.png" alt="" />
+		</a>
 	</section>
 
 	<!-- CSS SHAPES -->
@@ -457,7 +474,7 @@
     <section>
 
       <a href="http://css-tricks.com/examples/ShapesOfCSS/" target="_blank">
-        <img src="resources/csstricks-shapes.png" alt="" />
+        <img src="resources/screenshots/csstricks-shapes.png" alt="" />
       </a>
 
     </section>
@@ -470,10 +487,10 @@
     <section>
         <h2>Shape Inside</h2>
 <pre><code>
-/* wrap the content inside a circle */
-#content {
-shape-inside: circle(50%, 50%, 10em)
-}
+ /* wrap the content inside a circle */
+ #content {
+  shape-inside: circle(10em at 50% 50%)
+ }
 
 </code></pre>
     <img src="resources/shape-inside.png" alt="" height='35%'/>
@@ -483,10 +500,10 @@ shape-inside: circle(50%, 50%, 10em)
     <section>
         <h2>Shape Outside</h2>
 <pre><code>
-#coffee {
-float: left;
-shape-outside: circle(50%, 50%, 10em);
-}
+ #coffee {
+  float: left;
+  shape-outside: circle(10em at 50% 50%);
+ }
 
 </code></pre>
     <img src="resources/shape-outside.png" alt="" height='35%'/>
@@ -495,37 +512,43 @@ shape-outside: circle(50%, 50%, 10em);
     <section>
         <h2>Complex shapes</h2>
 <pre><code>
-.content{
-/* shape defined by points of a polygon */
-shape-inside: polygon(x1, y1 x2, y2 ... );
-}
+ .content{
+  /* shape defined by points of a polygon */
+  shape-inside: polygon(x1, y1 x2, y2 ... );
+ }
 
-.content{
-/* shape defined by the alpha levels of an image */
-shape-inside: url(image.png);
-shape-image-threshold: 0.5;
-}
+ .content{
+  /* shape defined by the transparency of an image */
+  shape-inside: url(image.png);
+  shape-image-threshold: 0.5;
+ }
 
 </code></pre>
     </section>
 
     <section>
-      <a href="http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/" target="_blank"><img src="resources/css-shapes-alice.jpg" alt="" /></a>
-      <a href="http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/">Enhancing Visual Storytelling with CSS Shapes</a>
+      <a href="http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/" target="_blank"><img src="resources/screenshots/alice-shapes.png" alt="" /></a>
     </section>
 
     <section>
         <h2>CSS Shapes status</h2>
-        <p><a href="http://www.w3.org/TR/css-shapes/">W3C Working Draft</a> - Adobe, Microsoft</p>
+        <p><a href="http://www.w3.org/TR/css-shapes-1/">W3C Candidate Recommendation</a> - Adobe, Microsoft</p>
         <div class="side-by-side">
-          <div class="side">
-            <img src="resources/browser-logos/webkit.png" class="partial" alt="Webkit browser logo" />
-          </div>
           <div class="side">
             <img src="resources/browser-logos/chrome.png" class="partial" alt="Chrome browser logo" />
           </div>
+					<div class="side">
+						<img src="resources/browser-logos/webkit.png" class="partial" alt="Webkit browser logo" />
+					</div>
+					<div class="side">
+						<img src="resources/browser-logos/opera.png" class="partial" alt="Opera browser logo" />
+					</div>
         </div>
     </section>
+
+		<section>
+			<a href="http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/" target="_blank"><img src="resources/screenshots/alice-shapes-workaround.png" alt="" /></a>
+		</section>
 
     <section id="recap">
         <div class="side-by-side">

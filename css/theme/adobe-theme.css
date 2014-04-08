@@ -265,7 +265,9 @@ section:nth-child(1) h2 {
     max-height: auto; }
 
 img.partial {
-  -webkit-mask: -webkit-linear-gradient(25deg, black 50%, rgba(252, 252, 252, 0.3) 50%); }
+  -webkit-mask: -webkit-linear-gradient(25deg, black 50%, rgba(252, 252, 252, 0.3) 50%);
+  -moz-mask: -moz-linear-gradient(25deg, black 50%, rgba(252, 252, 252, 0.3) 50%);
+  mask: linear-gradient(25deg, black 50%, rgba(252, 252, 252, 0.3) 50%); }
 
 /* ------ Blending */
 @keyframes blending-slide-over {

@@ -327,6 +327,8 @@ section:nth-child(1){
 
 img.partial{
   -webkit-mask: -webkit-linear-gradient(25deg, rgba(0,0,0,1) 50%, rgba(252,252,252,0.3) 50%);
+  -moz-mask: -moz-linear-gradient(25deg, rgba(0,0,0,1) 50%, rgba(252,252,252,0.3) 50%);
+  mask: linear-gradient(25deg, rgba(0,0,0,1) 50%, rgba(252,252,252,0.3) 50%);
 }
 
 /* ------ Blending */
