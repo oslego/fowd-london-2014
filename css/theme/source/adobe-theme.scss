@@ -72,7 +72,8 @@ body {
 }
 
 .reveal pre code{
-  padding: 0;
+  padding: 0 0.5em 0 0;
+  background: #111;
 }
 
 section:nth-child(1){
@@ -219,17 +220,25 @@ section:nth-child(1){
   background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #41A0A0, #1D6872);
 }
 
-.white .reveal .state-background {
-  background: white;
-/*  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #6f518f, #8560a8);*/
-}
+@supports (background-blend-mode: multiply){
+  .reveal .state-background {
+    background: #384042 center top no-repeat;
+    background-image: url(../../resources/grunge-luminance-1.jpg),  -webkit-linear-gradient(top, #858585, #858585);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
 
-.white .reveal a{
-  color: black;
-}
+  .blendingbg .reveal .state-background{
+    background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #206B7E, #0A3647);
+    background-size: cover;
+  }
 
-.white .reveal h2{
-  text-transform: none;
+  .maskingbg .reveal .state-background{
+    background: #1D6872 top center no-repeat;
+    background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #71A3A3, #1D6872);
+    background-size: cover;
+  }
+
 }
 
 .exclusionsbg .reveal .state-background{

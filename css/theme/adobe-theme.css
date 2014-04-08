@@ -64,7 +64,8 @@ body {
   font-size: 0.85em; }
 
 .reveal pre code {
-  padding: 0; }
+  padding: 0 0.5em 0 0;
+  background: #111; }
 
 section:nth-child(1) h1 {
   font-size: 7rem; }
@@ -184,16 +185,21 @@ section:nth-child(1) h2 {
   background: #1D6872 top center no-repeat;
   background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #41a0a0, #1d6872); }
 
-.white .reveal .state-background {
-  background: white;
-  /*  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #6f518f, #8560a8);*/ }
+@supports (background-blend-mode: multiply) {
+  .reveal .state-background {
+    background: #384042 center top no-repeat;
+    background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #858585, #858585);
+    background-size: cover;
+    background-blend-mode: multiply; }
 
-.white .reveal a {
-  color: black; }
+  .blendingbg .reveal .state-background {
+    background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #206b7e, #0a3647);
+    background-size: cover; }
 
-.white .reveal h2 {
-  text-transform: none; }
-
+  .maskingbg .reveal .state-background {
+    background: #1D6872 top center no-repeat;
+    background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #71a3a3, #1d6872);
+    background-size: cover; } }
 .exclusionsbg .reveal .state-background {
   background: #4d74b3 center top no-repeat;
   background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #4d74b3, #5784cb); }
