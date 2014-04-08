@@ -194,11 +194,20 @@ section:nth-child(1){
 
  #logo{
    position: absolute;
+   opacity: 0;
+   transition: opacity 0.5s ease-out;
    top: 0;
    right: 7%;
-   z-index: 99;
-   width: 1.3em;
+   z-index: 1;
  }
+
+ #logo img{
+   width: 2em;
+ }
+
+.intro #logo{
+  opacity: 1;
+}
 
 .reveal .state-background {
   background: #384042 center top no-repeat;
@@ -269,6 +278,11 @@ section:nth-child(1){
   padding: 0.2em 0 0 0;
 }
 
+p.desc{
+  font-size: 2em;
+  margin: 0 0 1em;
+}
+
 .toc li{
   list-style: none;
   padding: 0.3em 0;
@@ -277,25 +291,6 @@ section:nth-child(1){
 
 .toc li.past {
   opacity: 0.5;
-}
-
-.hlist, .canvas{
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: flex;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  justify-content: space-around;
-}
-
-.hlist{
-  margin: 10% 0 0;
-}
-
-.hlist * {
-  -webkit-flex: 1 1 auto;
 }
 
 .side-by-side{
@@ -308,6 +303,10 @@ section:nth-child(1){
     -webkit-flex: 1 0 0;
     -moz-flex: 1 0 0;
     flex: 1 0 0;
+  }
+
+  .side.fix-w3c{
+    display: flex;
   }
 
   .side+.side{
