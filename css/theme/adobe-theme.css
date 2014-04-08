@@ -60,6 +60,12 @@ body {
 .reveal h1 + h2 {
   text-transform: none; }
 
+.reveal pre {
+  font-size: 0.85em; }
+
+.reveal pre code {
+  padding: 0; }
+
 section:nth-child(1) h1 {
   font-size: 7rem; }
 section:nth-child(1) h2 {
@@ -388,6 +394,10 @@ input[type="color"] {
   .hola h2 span:nth-child(5) {
     color: #fbc839; }
 
+.hola h2.texture {
+  -webkit-mask-image: url(../../resources/grunge-alpha-1.png);
+  -webkit-mask-size: 400px 100%; }
+
 .hola h2:hover {
   animation-play-state: running; }
 
@@ -432,3 +442,16 @@ input[type="color"] {
     width: 6em;
     height: 6em;
     -webkit-transform: skew(15deg); }
+
+.clip-surface {
+  background: url("../../resources/road.jpg") center bottom no-repeat;
+  height: 500px; }
+
+#clip-target-circle {
+  -webkit-clip-path: circle(25% at 50% 50%); }
+
+#clip-target-ellipse {
+  -webkit-clip-path: ellipse(50% 40% at 50% 50%); }
+
+#clip-target-polygon {
+  -webkit-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px); }

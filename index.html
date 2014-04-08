@@ -244,13 +244,14 @@
     <section data-state="blendingbg">
       <h2>Element Blending</h2>
 <pre><code>
-div {
-  background-image: url(texture.png);
-}
+ /* blend heading with container */
+ h2 {
+   mix-blend-mode: difference;
+ }
 
-h2 {
-  mix-blend-mode: difference;
-}
+ .container {
+   background-image: url(texture.png);
+ }
 
 </code></pre>
     </section>
@@ -274,11 +275,6 @@ h2 {
 			</div>
 		</section>
 
-		<section>
-			<h2>CONFIGURABLE THEME</h2>
-			<p>// TODO: texture, color picker</p>
-		</section>
-
 		<section data-state="blendingbg">
 			<a href="http://www.theverge.com/" target="_blank">
 				<img src="resources/screenshots/theverge.png" alt="The Verge website homepage" />
@@ -290,8 +286,6 @@ h2 {
 				<img src="resources/screenshots/medium-bennett.png" alt="Bennett Feely about CSS Blend Modes in web design" />
 			</a>
 		</section>
-
-
 
     <section data-state="blendingbg">
 
@@ -328,47 +322,57 @@ h2 {
 		<h2>clipping <em>vs</em> masking</h2>
 	</section>
 
+	<!-- circle clipping -->
 	<section data-state="maskingbg">
-		<h2>Clipping</h2>
-	<pre><code>
-	.element {
-	/* clip the element to a circle */
-	clip-path: circle(50%, 50%, 10em);
-	}
+		<p>
+			clip-path: <span id="clip-output-circle">circle(25% at 50% 50%)</span>;
+		</p>
 
-	</code></pre>
+		<div class="clip-surface" data-js-clip-trigger="circle" data-js-clip-output='#clip-output-circle' id="clip-target-circle"></div>
+	</section>
+
+	<!-- ellipse clipping -->
+	<section data-state="maskingbg">
+		<p>
+			clip-path: <span id="clip-output-ellipse">ellipse(50% 40% at 50% 50%)</span>;
+		</p>
+
+		<div class="clip-surface" data-js-clip-trigger="ellipse" data-js-clip-output='#clip-output-ellipse' id="clip-target-ellipse"></div>
+	</section>
+
+	<!-- polygon clipping -->
+	<section data-state="maskingbg">
+		<p>
+			clip-path: <span id="clip-output-polygon">polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px)</span>;
+		</p>
+
+		<div class="clip-surface" data-js-clip-trigger="ellipse" data-js-clip-output='#clip-output-polygon' id="clip-target-polygon"></div>
 	</section>
 
 	<section data-state="maskingbg">
 		<h2>Clipping with SVG</h2>
 	<pre><code>
-	&lt;style&gt;
-	.element {
-	/* clip the element using SVG */
-	clip-path: url(#clipping);
-	}
-	&lt;/style&gt;
+ .element {
+  -webkit-clip-path: url(#clipping);
+ }
 
-	&lt;svg&gt;
-	&lt;defs&gt;
-	&lt;clipPath id=&quot;clipping&quot;&gt;
-	&lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-	&lt;path d=&quot;M90,30c0-5.523-4.477-10 ...&quot;/&gt;
-	&lt;/clipPath&gt;
-	&lt;/defs&gt;
-	&lt;/svg&gt;
-
+</code></pre>
+<pre><code>
+ &lt;svg&gt;
+   &lt;clipPath id=&quot;clipping&quot;&gt;
+     &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;10&quot;/&gt;
+   &lt;/clipPath&gt;
+ &lt;/svg&gt;
 	</code></pre>
 	</section>
 
 	<section data-state="maskingbg">
 		<h2>Masking</h2>
 	<pre><code>
-	.element {
-	/* use an image as a mask */
-	mask-image: url(mask.png);
-	}
-
+ .element {
+  /* use an image as a mask */
+  mask-image: url(mask.png);
+ }
 	</code></pre>
 	</section>
 
@@ -398,10 +402,13 @@ h2 {
 	</code></pre>
 	</section>
 
-	<section>
-		// backgorund-clip: text WEBKIT only
+	<section data-state="blendingbg">
+		<div class="surface hola">
+			<h2 class="texture">
+				<span>H</span><span>O</span><span>L</span><span>A</span><span>!</span>
+			</h2>
+		</div>
 	</section>
-
 
 	<section data-state="maskingbg">
 
@@ -604,6 +611,7 @@ shape-image-threshold: 0.5;
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
+	<script src="js/CSSShapesEditor.js"></script>
 
 	<script>
 
@@ -645,7 +653,38 @@ shape-image-threshold: 0.5;
 				mockOverlay.style.opacity = '0.7';
 			})
 		})();
+
+		(function(){
+				var clipEditor;
+
+				document.addEventListener('click', function(e){
+					if (e.target.dataset && e.target.dataset.jsClipTrigger){
+						var target = e.target;
+						var value = window.getComputedStyle(target).webkitClipPath;
+						var output = document.querySelector(e.target.dataset.jsClipOutput);
+						clipEditor = new CSSShapesEditor(target, value);
+						clipEditor.on('shapechange', function(){
+							var outVal = clipEditor.getCSSValue();
+							target.style.webkitClipPath = outVal;
+							output.textContent = outVal;
+						})
+					}
+				});
+
+				document.addEventListener('keydown', function(e){
+					// pressing X will close the editor
+					if (e.keyCode == 88 && clipEditor){
+						clipEditor.off('shapechange');
+						clipEditor.remove();
+						clipEditor = null;
+					}
+				})
+		})()
+
+
+
 	</script>
+
 
 </body>
 </html>
