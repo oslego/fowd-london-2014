@@ -38,7 +38,7 @@
 <body>
 
 	<div class="reveal">
-		<a href="http://html.adobe.com"><img src="resources/adobelogo.svg" id="logo" alt="" /></a>
+		<a href="http://html.adobe.com" id="logo"><img src="resources/adobelogo.svg"  alt="" /></a>
 
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
@@ -51,29 +51,25 @@
 		</p>
 	</section>
 
-	<section>
-		<h2>About</h2>
+	<section data-state='intro'>
 
-		<p>Adobe Web Platform Team</p>
+		<p class="desc">Adobe <span class="no-break">Web Platform</span> Team</p>
 
-		<ul>
-			<li>W3C</li>
-			<li>WebKit</li>
-			<li>Blink</li>
-			<li>Firefox</li>
-		</ul>
+		<div class="side-by-side">
+			<div class="side fix-w3c">
+				<img src="resources/w3c-logo.svg" alt="">
+			</div>
+			<div class="side">
+				<img src="resources/browser-logos/chromium.png" alt="">
+			</div>
+			<div class="side">
+				<img src="resources/browser-logos/webkit.png" alt="">
+			</div>
+			<div class="side">
+				<img src="resources/browser-logos/firefox.png" alt="">
+			</div>
+		</div>
 
-
-		<p>//TALK: experiments, demos (some today) and tools</p>
-	</section>
-
-	<section>
-		<p>//TALK: FOWD, opportunity to introduce new CSS features for graphics<p>
-	</section>
-
-	<section>
-		<p>//TALK: Flat design, (JOKE) about gradients + border-radius<p>
-		<p>Stagnant CSS ?</p>
 	</section>
 
     <section>
@@ -279,6 +275,10 @@
 			<a href="http://www.theverge.com/" target="_blank">
 				<img src="resources/screenshots/theverge.png" alt="The Verge website homepage" />
 			</a>
+		</section>
+
+		<section data-state="blendingbg">
+			<img src="resources/demo-verge1.gif" alt="The Verge progressive enhancement demo" />
 		</section>
 
 		<section data-state="blendingbg">
@@ -530,6 +530,12 @@
       <a href="http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/" target="_blank"><img src="resources/screenshots/alice-shapes.png" alt="" /></a>
     </section>
 
+		<section>
+			<a href="http://sarasoueidan.com/blog/css-shapes/"  target="_blank">
+				<img src="resources/screenshots/sara-shapes.png" alt="" />
+			</a>
+		</section>
+
     <section>
         <h2>CSS Shapes status</h2>
         <p><a href="http://www.w3.org/TR/css-shapes-1/">W3C Candidate Recommendation</a> - Adobe, Microsoft</p>
@@ -549,6 +555,7 @@
 		<section>
 			<a href="http://adobe-webplatform.github.io/Demo-for-Alice-s-Adventures-in-Wonderland/" target="_blank"><img src="resources/screenshots/alice-shapes-workaround.png" alt="" /></a>
 		</section>
+
 
     <section id="recap">
         <div class="side-by-side">
@@ -573,12 +580,6 @@
     </section>
 
     <section>
-      <h2>
-        <a href="//html.adobe.com">html.adobe.com</a>
-      </h2>
-    </section>
-
-    <section>
       <h1>end</h1>
       <h2>
           <a href="http://twitter.com/razvancaliman">@razvancaliman</a>
@@ -593,6 +594,9 @@
             </li>
 						<li>
 								<a href="http://chandang.deviantart.com/art/Scratch-Texture-54915337">Scratch Texture</a>
+						</li>
+						<li>
+								<a href="http://shadowhousecreations.blogspot.co.uk/2010/06/grunge-texture-set.html">Background Wall Texture</a>
 						</li>
         </ul>
 
