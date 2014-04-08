@@ -427,6 +427,94 @@ input[type="color"]{
   }
 }
 
+.surface{
+  height: 700px;
+  display: flex;
+  transform: scale(2);
+}
+
+.surface ::selection{
+  background: none;
+}
+
+.scratch{
+  background: #111 url(../../resources/scratch-texture.jpg);
+}
+
+.scratch h2{
+  margin: auto;
+  font-size: 4em;
+  width: 100%;
+  outline: none;
+  font-family: bangers, sans-serif;
+  color: white;
+  opacity: 1;
+  mix-blend-mode: difference;
+}
+
+/* Toggle to default state */
+.scratch h2:active{
+  opacity: 0.7;
+  mix-blend-mode: normal;
+}
+
+@keyframes hola-join{
+  from{
+    letter-spacing: 0em;
+  }
+  90%,100%{
+    letter-spacing: -0.15em;
+  }
+}
+
+.hola{
+  background: #fff;
+}
+
+.hola h2{
+  margin: auto;
+  font-size: 7em;
+
+  animation: hola-join 1.6s ease-in-out infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+
+  span{
+    mix-blend-mode: multiply;
+    font-family: 'Passion One', sans-serif;
+  }
+
+  span:nth-child(1){
+      color: rgb(251, 63, 45);
+  }
+
+  span:nth-child(2){
+      color: rgb(27, 139, 204);
+  }
+
+  span:nth-child(3){
+      color: rgb(250, 58, 122);
+  }
+
+  span:nth-child(4){
+      color: rgb(27, 149, 143);
+  }
+
+  span:nth-child(5){
+      color: rgb(251, 200, 57);
+  }
+}
+
+.hola h2:hover{
+  animation-play-state: running;
+}
+
+/* Toggle to default state */
+.hola h2:active span{
+  opacity: 0.7;
+  mix-blend-mode: normal;
+}
+
 #shapes-illustration{
   div{
     background: rgb(255, 185, 0);

@@ -332,6 +332,70 @@ input[type="color"] {
   #blending-illustration .layer.result p {
     border-style: dashed; }
 
+.surface {
+  height: 700px;
+  display: flex;
+  transform: scale(2); }
+
+.surface ::selection {
+  background: none; }
+
+.scratch {
+  background: #111111 url(../../resources/scratch-texture.jpg); }
+
+.scratch h2 {
+  margin: auto;
+  font-size: 4em;
+  width: 100%;
+  outline: none;
+  font-family: bangers, sans-serif;
+  color: white;
+  opacity: 1;
+  mix-blend-mode: difference; }
+
+/* Toggle to default state */
+.scratch h2:active {
+  opacity: 0.7;
+  mix-blend-mode: normal; }
+
+@keyframes hola-join {
+  from {
+    letter-spacing: 0em; }
+
+  90%,100% {
+    letter-spacing: -0.15em; } }
+
+.hola {
+  background: #fff; }
+
+.hola h2 {
+  margin: auto;
+  font-size: 7em;
+  animation: hola-join 1.6s ease-in-out infinite;
+  animation-direction: alternate;
+  animation-play-state: paused; }
+  .hola h2 span {
+    mix-blend-mode: multiply;
+    font-family: 'Passion One', sans-serif; }
+  .hola h2 span:nth-child(1) {
+    color: #fb3f2d; }
+  .hola h2 span:nth-child(2) {
+    color: #1b8bcc; }
+  .hola h2 span:nth-child(3) {
+    color: #fa3a7a; }
+  .hola h2 span:nth-child(4) {
+    color: #1b958f; }
+  .hola h2 span:nth-child(5) {
+    color: #fbc839; }
+
+.hola h2:hover {
+  animation-play-state: running; }
+
+/* Toggle to default state */
+.hola h2:active span {
+  opacity: 0.7;
+  mix-blend-mode: normal; }
+
 #shapes-illustration div {
   background: #ffb900;
   float: left;

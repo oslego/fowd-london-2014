@@ -29,7 +29,10 @@
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
 
-<script src="http://use.edgefonts.net/lato.js"></script>
+	<script src="//use.edgefonts.net/lato.js"></script>
+	<script src="//use.edgefonts.net/bangers.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -239,42 +242,56 @@
 	</section>
 
     <section data-state="blendingbg">
-      <h2>Background Blending</h2>
-<pre><code>
-/* blend background images of the same element */
-.element {
-background: url(image1.jpg), url(image2.jpg);
-background-blend-mode: overlay;
-}
-
-</code></pre>
-    </section>
-
-    <section data-state="blendingbg">
       <h2>Element Blending</h2>
 <pre><code>
-div { background-image: url(texture.png); }
+div {
+  background-image: url(texture.png);
+}
 
-p {
-mix-blend-mode: overlay;
-font-family: "Mythos Std";
+h2 {
+  mix-blend-mode: difference;
 }
 
 </code></pre>
     </section>
 
-	<section>
-		//SCRATCH DEMO vs OPACITY
-	</section>
+		<section data-state="blendingbg">
+			<div class="surface scratch">
+				<h2 contenteditable>Scratch</h2>
+			</div>
+		</section>
 
-	<section>
-		//PAPER DEMO vs OPACITY
-	</section>
+		<section data-state="blendingbg">
+			<img src="resources/hola.jpg" alt="" />
 
-	<section>
-		<h2>CONFIGURABLE THEME</h2>
-		<p>// TODO: texture, color picker</p>
-	</section>
+		</section>
+
+		<section data-state="blendingbg">
+			<div class="surface hola">
+				<h2>
+					<span>H</span><span>O</span><span>L</span><span>A</span><span>!</span>
+				</h2>
+			</div>
+		</section>
+
+		<section>
+			<h2>CONFIGURABLE THEME</h2>
+			<p>// TODO: texture, color picker</p>
+		</section>
+
+		<section data-state="blendingbg">
+			<a href="http://www.theverge.com/" target="_blank">
+				<img src="resources/screenshots/theverge.png" alt="The Verge website homepage" />
+			</a>
+		</section>
+
+		<section data-state="blendingbg">
+			<a href="https://medium.com/web-design-technique/6b51bf53743a" target="_blank">
+				<img src="resources/screenshots/medium-bennett.png" alt="Bennett Feely about CSS Blend Modes in web design" />
+			</a>
+		</section>
+
+
 
     <section data-state="blendingbg">
 
@@ -575,6 +592,9 @@ shape-image-threshold: 0.5;
             <li>
                 <a href="http://lab.hakim.se/reveal-js/">Reveal.js</a> created by <a href="http://hakim.se">Hakim el Hattab</a>
             </li>
+						<li>
+								<a href="http://chandang.deviantart.com/art/Scratch-Texture-54915337">Scratch Texture</a>
+						</li>
         </ul>
 
     </section>
@@ -583,7 +603,7 @@ shape-image-threshold: 0.5;
 	</div>
 
 	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.min.js"></script>
+	<script src="js/reveal.js"></script>
 
 	<script>
 
@@ -624,7 +644,7 @@ shape-image-threshold: 0.5;
 				mockOverlay.style.backgroundColor = color;
 				mockOverlay.style.opacity = '0.7';
 			})
-		})()
+		})();
 	</script>
 
 </body>
