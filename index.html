@@ -663,7 +663,19 @@
 						var target = e.target;
 						var value = window.getComputedStyle(target).webkitClipPath;
 						var output = document.querySelector(e.target.dataset.jsClipOutput);
+
 						clipEditor = new CSSShapesEditor(target, value);
+
+						// force editor container to zoom in tune with the slides
+						clipEditor.on('ready', function(){
+							var slides = document.querySelector('div.slides');
+							var slidesStyle = window.getComputedStyle(slides);
+							var editorContainer = document.querySelector('[data-role="shape-editor"]');
+							editorContainer.style.zoom = slidesStyle.zoom;
+
+						});
+
+
 						clipEditor.on('shapechange', function(){
 							var outVal = clipEditor.getCSSValue();
 							target.style.webkitClipPath = outVal;
