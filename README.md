@@ -10,6 +10,11 @@ You may try to replicate that environment by running
 [Google Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)
 with the _Experimental Web Platform features_ flag enabled in `chrome://flags`.
 
+Demo
+---
+
+[Live Demo](http://razvancaliman.com/fowd-london-2014/#/)
+
 
 Learning Resources
 ---
