@@ -3,15 +3,15 @@ FOWD London | Cutting-edge CSS features for Graphics
 
 Slides from my talk at [Future of Web Design, London 2014](http://futureofwebdesign.com/london-2014/).
 
-This HTML slide deck is using cutting-edge CSS features for demonstration purposes
+Demo
+---
+
+This HTML slide deck is using cutting-edge CSS features for demonstration purposes.
 It is intended to be presented in a controlled environment.
 
 You may try to replicate that environment by running
 [Google Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)
 with the _Experimental Web Platform features_ flag enabled in `chrome://flags`.
-
-Demo
----
 
 [Live Demo](http://razvancaliman.com/fowd-london-2014/#/)
 
