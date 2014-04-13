@@ -211,48 +211,45 @@ section:nth-child(1){
 
 .reveal .state-background {
   background: #384042 center top no-repeat;
-  background-image: url(../../resources/grid_masked_light.png),  -webkit-linear-gradient(top, #384042, #46494c);
-}
-
-.regionsbg .reveal .state-background {
-  background: #6f518f top center no-repeat;
-  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #6f518f, #8560a8);
+  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #384042, #46494c);
+  background-image: url(../../resources/grid_masked_dark.png), linear-gradient(top, #384042, #46494c);
 }
 
 .blendingbg .reveal .state-background{
   background: #4ba1b7 top center no-repeat;
+  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(to bottom, #4ba1b7 , #146c90);
   background-image: url(../../resources/grid_masked_dark.png), linear-gradient(to bottom, #4ba1b7 , #146c90);
 }
 
 .maskingbg .reveal .state-background{
   background: #1D6872 top center no-repeat;
   background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #41A0A0, #1D6872);
+  background-image: url(../../resources/grid_masked_dark.png), linear-gradient(top, #41A0A0, #1D6872);
 }
 
 @supports (background-blend-mode: multiply){
   .reveal .state-background {
     background: #384042 center top no-repeat;
-    background-image: url(../../resources/grunge-luminance-1.jpg),  -webkit-linear-gradient(top, #858585, #858585);
+    background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #858585, #858585);
+    background-image: url(../../resources/grunge-luminance-1.jpg), linear-gradient(top, #858585, #858585);
     background-size: cover;
+
     background-blend-mode: multiply;
   }
 
   .blendingbg .reveal .state-background{
     background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #206B7E, #0A3647);
+    background-image: url(../../resources/grunge-luminance-1.jpg), linear-gradient(top, #206B7E, #0A3647);
     background-size: cover;
   }
 
   .maskingbg .reveal .state-background{
     background: #1D6872 top center no-repeat;
     background-image: url(../../resources/grunge-luminance-1.jpg), -webkit-linear-gradient(top, #71A3A3, #1D6872);
+    background-image: url(../../resources/grunge-luminance-1.jpg), linear-gradient(top, #71A3A3, #1D6872);
     background-size: cover;
   }
 
-}
-
-.exclusionsbg .reveal .state-background{
-  background: #4d74b3 center top no-repeat;
-  background-image: url(../../resources/grid_masked_dark.png), -webkit-linear-gradient(top, #4d74b3, #5784cb);
 }
 
 .photo .reveal section img{
@@ -336,7 +333,9 @@ $blending-image-source: '../../resources/blending-source.jpg';
 
 @keyframes blending-slide-over{
     to{
-        transform: rotatex(0)
+      -webkit-transform: rotatex(0);
+      -moz-transform: rotatex(0);
+      transform: rotatex(0);
     }
 }
 
@@ -348,6 +347,23 @@ input[type="color"]{
   height: 3em;
 }
 
+.reveal .support-warning{
+  padding: 1rem;
+  background: #fc5;
+  font-size: 1rem;
+  color: #333;
+  letter-spacing: 0;
+  line-height: 1.5rem;
+  a{
+    color: navy;
+    text-decoration: underline;
+  }
+  a:hover{
+    color: navy;
+    text-decoration: none;
+  }
+}
+
 #blending-comparison{
   figure{
     width: 100%;
@@ -356,10 +372,14 @@ input[type="color"]{
     margin: 3rem 0 0 ;
     position: relative;
     -webkit-perspective: 400;
+    -moz-perspective: 400;
+    perspective: 400;
   }
 
   .gradient{
     background: -webkit-linear-gradient(top, rgba(211, 19, 173, 0.78), rgba(255, 213, 0, 0.8)), url($blending-image-source) top left no-repeat;
+    background: -moz-linear-gradient(top, rgba(211, 19, 173, 0.78), rgba(255, 213, 0, 0.8)), url($blending-image-source) top left no-repeat;
+    background: linear-gradient(top, rgba(211, 19, 173, 0.78), rgba(255, 213, 0, 0.8)), url($blending-image-source) top left no-repeat;
     background-size: cover, cover;
   }
 
@@ -386,12 +406,30 @@ input[type="color"]{
   .mock-overlay.visible{
     animation-play-state: running;
   }
+}
 
-  figure.blended{
+/* turn off warnings if there is support */
+@supports (background-blend-mode: overlay){
+  .reveal .support-warning.blending{
+    display: none;
+  }
+
+  #blending-comparison figure.blended{
     background-blend-mode: overlay;
   }
 }
 
+@supports (-webkit-clip-path: circle(25% at 50% 50%)){
+  .reveal .support-warning.clipping{
+    display: none;
+  }
+}
+
+@supports (-webkit-clip-path: circle(25% at 50% 50%)) and (background-blend-mode: overlay) and (mix-blend-mode: overlay){
+  .reveal .support-warning.intro{
+    display: none;
+  }
+}
 
 .reveal ul{
   list-style: none;
@@ -401,14 +439,30 @@ input[type="color"]{
 
   .layer{
     display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+
     -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end;
+
     -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+
     -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    perspective: 1000;
+
     -webkit-perspective-origin: left bottom;
+    -moz-perspective-origin: left bottom;
+    perspective-origin: left bottom;
 
     p{
       text-align: left;
       -webkit-flex: 1 1 auto;
+      -moz-flex: 1 1 auto;
+      flex: 1 1 auto;
       border-bottom: 0.1em solid rgba(255,255,255,0.4);
     }
 
@@ -420,9 +474,18 @@ input[type="color"]{
     figure{
       width: 10em;
       height: 6em;
+
       -webkit-transform-origin: right top;
+      -moz-transform-origin: right top;
+      transform-origin: right top;
+
       -webkit-transform: rotatex(35deg) translate(-100px, -50px);
+      -moz-transform: rotatex(35deg) translate(-100px, -50px);
+      transform: rotatex(35deg) translate(-100px, -50px);
+
       -webkit-filter: drop-shadow(0 1em 0.5em rgba(0,0,0,0.5));
+      -moz-filter: drop-shadow(0 1em 0.5em rgba(0,0,0,0.5));
+      filter: drop-shadow(0 1em 0.5em rgba(0,0,0,0.5));
 
       background-image: url($blending-image-source);
       background-repeat: none;
@@ -448,9 +511,10 @@ input[type="color"]{
 .surface{
   height: 700px;
   display: flex;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
   transform: scale(2);
 }
-
 .surface ::selection{
   background: none;
 }
@@ -525,7 +589,9 @@ input[type="color"]{
 
 .hola h2.texture{
   -webkit-mask-image: url(../../resources/grunge-alpha-1.png);
+  mask-image: url(../../resources/grunge-alpha-1.png);
   -webkit-mask-size: 400px 100%;
+  mask-size: 400px 100%;
 }
 
 .hola h2:hover{
@@ -576,26 +642,17 @@ input[type="color"]{
       clear: left;
     }
 
-
     &:nth-child(7){
       width: 4em;
       height: 6em;
       border-radius: 1em;
     }
 
-
     &:nth-child(8){
       width: 6em;
       height: 6em;
       border-radius: 50%;
     }
-
-    &:nth-child(9){
-      width: 6em;
-      height: 6em;
-      -webkit-transform: skew(15deg);
-    }
-
   }
 }
 
@@ -607,12 +664,16 @@ input[type="color"]{
 
 #clip-target-circle{
   -webkit-clip-path: circle(25% at 50% 50%);
+  -moz-clip-path: circle(25% at 50% 50%);
+  /* FIXME (13 April, 2014): Un-prefixed clip-path still applies to SVG only. To replace when parity is achieved. */
 }
 
 #clip-target-ellipse{
   -webkit-clip-path: ellipse(50% 40% at 50% 50%);
+  -moz-clip-path: ellipse(50% 40% at 50% 50%);
 }
 
 #clip-target-polygon{
   -webkit-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
+  -moz-clip-path: polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px);
 }

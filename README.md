@@ -53,4 +53,6 @@ Start on [html.adobe.com](http://html.adobe.com/webplatform)
 
   * [Techniques for Creating Textured Text](http://tympanus.net/codrops/2013/12/02/techniques-for-creating-textured-text/) by Sara Soueidan
 
+  * [Responsive Mask](razvancaliman.com/responsive-mask-image)
+
   * [W3C | CSS Masking Module Level 1](http://www.w3.org/TR/css-masking-1/)

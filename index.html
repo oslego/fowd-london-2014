@@ -29,7 +29,6 @@
 	<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
 
-	<script src="//use.edgefonts.net/lato.js"></script>
 	<script src="//use.edgefonts.net/bangers.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 
@@ -44,6 +43,11 @@
 		<div class="slides">
 
 	<section>
+		<div class="support-warning intro">
+			This slide deck is meant to be used in a controlled environment. It demonstrates some cutting-edge CSS features which this browser does not fully support.
+			<a href="https://github.com/oslego/fowd-london-2014">Read the instructions</a> on how to setup that environment and get the full experience.
+		</div>
+
 		<h1>Cutting-edge <span class="no-break">CSS Features</span></h1>
 		<h2><span class="no-break">CSS Blend Modes</span>, <span class="no-break"> Masking and Shapes</span></h2>
 		<p>
@@ -94,6 +98,10 @@
 
     <section data-state='blendingbg'>
 
+			<div class="support-warning blending">
+				This slide uses the <code>background-blend-mode</code> property. It is not supported in this browser. <a href="http://html.adobe.com/webplatform/enable/#section-chrome">Learn how to get a capable browser</a>.
+			</div>
+
       <div id="blending-comparison" class="side-by-side">
         <div class="side">
           <p>simple alpha compositing</p>
@@ -113,6 +121,10 @@
     </section>
 
 		<section data-state='blendingbg'>
+
+			<div class="support-warning blending">
+				This slide uses the <code>background-blend-mode</code> property. It is not supported in this browser. <a href="http://html.adobe.com/webplatform/enable/#section-chrome">Learn how to get a capable browser</a>.
+			</div>
 
 			<div id="blending-comparison" class="side-by-side">
 				<div class="side">
@@ -328,6 +340,10 @@
 			clip-path: <span id="clip-output-circle">circle(25% at 50% 50%)</span>;
 		</p>
 
+		<div class="support-warning clipping">
+			This slide uses the <code>-webkit-clip-path</code> property. It is not supported in this browser. <a href="http://html.adobe.com/webplatform/enable/#section-chrome">Learn how to get a capable browser</a>.
+		</div>
+
 		<div class="clip-surface" data-js-clip-trigger="circle" data-js-clip-output='#clip-output-circle' id="clip-target-circle"></div>
 	</section>
 
@@ -337,6 +353,10 @@
 			clip-path: <span id="clip-output-ellipse">ellipse(50% 40% at 50% 50%)</span>;
 		</p>
 
+		<div class="support-warning clipping">
+			This slide uses the <code>-webkit-clip-path</code> property. It is not supported in this browser. <a href="http://html.adobe.com/webplatform/enable/#section-chrome">Learn how to get a capable browser</a>.
+		</div>
+
 		<div class="clip-surface" data-js-clip-trigger="ellipse" data-js-clip-output='#clip-output-ellipse' id="clip-target-ellipse"></div>
 	</section>
 
@@ -345,6 +365,10 @@
 		<p>
 			clip-path: <span id="clip-output-polygon">polygon(nonzero, 955px 405px, 483px 212px, 1px 400px, 0px 500px, 956px 500px)</span>;
 		</p>
+
+		<div class="support-warning clipping">
+			This slide uses the <code>-webkit-clip-path</code> property. It is not supported in this browser. <a href="http://html.adobe.com/webplatform/enable/#section-chrome">Learn how to get a capable browser</a>.
+		</div>
 
 		<div class="clip-surface" data-js-clip-trigger="ellipse" data-js-clip-output='#clip-output-polygon' id="clip-target-polygon"></div>
 	</section>
