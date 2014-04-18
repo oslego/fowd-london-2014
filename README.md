@@ -35,6 +35,8 @@ Start on [html.adobe.com](http://html.adobe.com/webplatform)
 
   * [Introduction to CSS Shapes](http://html.adobe.com/webplatform/layout/shapes/)
 
+  * [CSS Shapes Editor extension for Brackets](http://blog.brackets.io/2014/04/17/css-shapes-editor/)
+
 
 **CSS Blend Modes**
 
