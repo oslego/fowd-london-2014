@@ -13,7 +13,7 @@ You may try to replicate that environment by running
 [Google Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html)
 with the _Experimental Web Platform features_ flag enabled in `chrome://flags`.
 
-[Live Demo](http://razvancaliman.com/fowd-london-2014/#/)
+[Live Demo](http://razvancaliman.com/fowd-london-2014/#/) | [Static slides (PDF)](https://speakerdeck.com/razvancaliman/cutting-edge-css-features-css-blend-modes-css-masking-and-css-shapes)
 
 
 Learning Resources
